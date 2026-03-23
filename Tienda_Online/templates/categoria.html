@@ -1,0 +1,48 @@
+{% extends 'plantilla.html'%}
+
+{% block title %}
+    <title>Categorías</title>
+{% endblock title %}
+
+
+{% block section %}
+
+    <form action="/categoria/" method='GET' >
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <label for="categoria">Nombre</label>
+                </div>
+                <div class="col-6">
+                    <select name="categoria" id="" class="form-select">
+                            <option value="" selected disabled>Elige una opcion</option>
+                        {% for categoria in lista_categorias %}
+                            <option value="{{categoria.id}}">{{categoria.nombre}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-1">
+                    <input type="submit" value="Buscar" class="form-control boton text-white" >
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="container">
+        <div class="row">
+            {% for pr in productos %}
+            <div class="col-3 mt-4 mb-4">
+                <div class="card shadow-lg">
+                    <img src="{{pr.ruta_imagen}}" width="180px" height="200px" class="card-img-top" alt="">
+                        <div class="card-body text-center">
+                        <p class="card-title">{{pr.nombre}}</p>
+                        <p clas="card-text">Q.{{pr.precio}}</p>
+                        <a href="{% url 'agregar_al_carrito' pr.id %}" class="btn btn-secondary"><i class="fa fa-shopping-cart">Añadir al carrito</i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock section%}
+

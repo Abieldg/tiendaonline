@@ -1,0 +1,17 @@
+{% extends 'plantilla.html'%}
+
+{% block title %}
+    <title>Carrito de Compras</title>
+{% endblock title %}
+
+
+{% block section %}
+    
+    {% for pedido in pedidos %}
+        {{pedido.id}}
+        {% for p in pedido.productos.all %}
+            {{p.nombre}}
+        {% endfor %}
+    {% endfor %}
+
+{% endblock section%}

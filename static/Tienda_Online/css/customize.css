@@ -1,0 +1,39 @@
+ul{
+    background-color: blueviolet;
+    text-align: center;
+    padding: 20px;
+
+}
+
+li{
+    display: inline;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+a:hover{
+    color: black;
+}
+
+.parrafo{
+     background-color: blueviolet;
+}
+
+.boton{
+    background-color: rgb(65, 144, 85);
+}
+
+.tituloInicio{
+    color:rgb(61, 114, 81);
+}
+
+.fondo{
+    background-color: rgb(204, 199, 199);
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO4Sm2ZO_OlCOaqFR1A-kuVpIbv9A_w8Q8NA&s");
+    background-repeat: repeat-x;
+    background-size: contain;
+}

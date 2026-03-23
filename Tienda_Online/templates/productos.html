@@ -1,0 +1,30 @@
+{% extends 'plantilla.html'%}
+
+{% block title %}
+    <title>Productos</title>
+{% endblock title %}
+
+
+{% block section %}
+    
+    <h1 class=" tituloInicio text-center"><strong>Galería de Productos</strong></h1>
+
+
+    <div class="container border">
+        <div class="row">
+            {% for pr in productos %}
+            <div class="col-3 mt-4 mb-4">
+                <div class="card shadow-lg">
+                    <img src="{{pr.ruta_imagen}}" width="180px" height="200px" class="card-img-top" alt="">
+                        <div class="card-body text-center">
+                        <p class="card-title">{{pr.nombre}}</p>
+                        <p clas="card-text">Q.{{pr.precio}}</p>
+                        <a href="{% url 'agregar_al_carrito' pr.id %}" class="btn btn-secondary">Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock section%}
