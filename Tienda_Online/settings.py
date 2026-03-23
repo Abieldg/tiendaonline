@@ -60,7 +60,7 @@ ROOT_URLCONF = 'Tienda_Online.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/MAYKER/Desktop/Pagina_Web/venv/Tienda_Online/Tienda_Online/templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
