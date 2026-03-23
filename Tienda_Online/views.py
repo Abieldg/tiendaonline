@@ -6,8 +6,6 @@ from Tienda_Online.forms import FormularioContacto
 from GestionProductos.models import Comentario, Pedido
 from django.db.models import Q
 import datetime
-import os
-from django.conf import settings
 
 def bienvenida(request):
     return HttpResponse("Bienvenidos")
@@ -37,14 +35,7 @@ def plantilla2(request):
     return HttpResponse(documento)
 
 def inicio(request):
-    ruta = settings.BASE_DIR / 'templates'
-    
-    try:
-        archivos = os.listdir(ruta)
-    except Exception as e:
-        return HttpResponse(f"Error accediendo a templates: {e}")
-    
-    return HttpResponse(f"Archivos en templates: {archivos}")
+    return render(request,'inicio.html')
 
 def productos(request):
     
